@@ -1,10 +1,10 @@
+import Hero from "./components/HeroSection"
+
 function App() {
   return (
     <>
-      <main>
-        <h1 className="text-3xl font-bold font-zentry">
-          Hello world!
-        </h1>
+      <main className="relative min-h-screen w-screen overflow-x-hidden">
+        <Hero/>
       </main>
     </>
   )
