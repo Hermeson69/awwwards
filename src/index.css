@@ -1,36 +1,34 @@
 @import "tailwindcss";
 
 /* Theme Variables */
-@theme {
+:root {
   --circular-font: 'circular-web';
-  --robert-font: 'robert-medium';
-  --robertR-font: 'robert-regular';
+  --robert-medium: 'robert-medium';
+  --robert-regular: 'robert-regular';
   --general-font: 'general';
   --zentry-font: 'zentry';
 }
 
 /* Font Faces */
-@layer base {
-  @font-face {
-    font-family: 'circular-web';
-    src: url('/fonts/circularweb-book.woff2') format('woff2');
-  }
-  @font-face {
-    font-family: 'general';
-    src: url('/fonts/general.woff2') format('woff2');
-  }
-  @font-face {
-    font-family: 'robert-medium';
-    src: url('/fonts/robert-medium.woff2') format('woff2');
-  }
-  @font-face {
-    font-family: 'robert-regular';
-    src: url('/fonts/robert-regular.woff2') format('woff2');
-  }
-  @font-face {
-    font-family: 'zentry';
-    src: url('/fonts/zentry-regular.woff2') format('woff2');
-  }
+@font-face {
+  font-family: 'circular-web';
+  src: url('/fonts/circularweb-book.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'general';
+  src: url('/fonts/general.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'robert-medium';
+  src: url('/fonts/robert-medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'robert-regular';
+  src: url('/fonts/robert-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'zentry';
+  src: url('/fonts/zentry-regular.woff2') format('woff2');
 }
 
 /* Utility Classes */
@@ -42,10 +40,10 @@
     font-family: var(--general-font);
   }
   .font-rob-med {
-    font-family: var(--robert-font);
+    font-family: var(--robert-medium);
   }
   .font-rob-reg {
-    font-family: var(--robertR-font);
+    font-family: var(--robert-regular);
   }
   .font-zentry {
     font-family: var(--zentry-font);
