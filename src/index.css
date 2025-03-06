@@ -96,7 +96,7 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 
-  .font-special b {
+  .font-special, b {
     font-family: var(--font-zentry);
     font-feature-settings: "ss01" on;
   }
