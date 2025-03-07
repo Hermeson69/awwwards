@@ -1,14 +1,20 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";
+
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Hero = () => {
     const [currentIndex, setcurrentIndex] = useState(1);
     const [hasClick, setHasClick] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [loadedVideos, setLoadedVideos] = useState(0);
+
+
 
     const totalVideos = 4;
 
@@ -25,6 +31,12 @@ const Hero = () => {
         setHasClick(true);
         setcurrentIndex(upcomingVideos);
     };
+
+    useEffect (()=>{
+        if(loadedVideos === totalVideos -1 ){
+            setIsLoading(false)
+        }
+    },[loadedVideos])
 
     const getVideoSrc = (index: number): string => `videos/hero-${index}.mp4`;
 
@@ -56,11 +68,37 @@ const Hero = () => {
           revertOnUpdate: true,
         }
       );
-      
+
+      useGSAP(() => {
+        gsap.set("#video-frame", {
+          clipPath: "polygon(14% 0, 72% 0, 88% 90%, 0 95%)",
+          borderRadius: "0% 0% 40% 10%",
+        });
+        gsap.from("#video-frame", {
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+          borderRadius: "0% 0% 0% 0%",
+          ease: "power1.inOut",
+          scrollTrigger: {
+            trigger: "#video-frame",
+            start: "center center",
+            end: "bottom center",
+            scrub: true,
+          },
+        });
+      });
     
 
     return (
         <div className="relative h-screen w-screen overflow-x-hidden">
+            {isLoading && (
+                <div className="flex-center absolut z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
+                    <div className="three-body">
+                        <div className="three-body__dot"/>
+                        <div className="three-body__dot"/>
+                        <div className="three-body__dot"/>
+                    </div>
+                </div>
+            )}
             <div id="video-frame" className="relative z-10 h-full w-full overflow-hidden rounded-lg bg-blue-75">
                 <div>
                     <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
