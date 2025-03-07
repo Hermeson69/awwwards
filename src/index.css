@@ -97,7 +97,7 @@ body {
   }
 
   .font-special, b {
-    font-family: var(--font-zentry);
+    font-family: var(--robert-medium);
     font-feature-settings: "ss01" on;
   }
 
