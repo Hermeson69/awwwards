@@ -1,11 +1,12 @@
 import gsap from 'gsap'
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from 'gsap/all'
-import Animatetitle from './animate-title'
+import Animatetitle from './Animate-title'
 gsap.registerPlugin(ScrollTrigger)
 
 const About = () =>{
     useGSAP(()=>{
+        window.scrollTo(0, 0);
         const clipAnimation = gsap.timeline(
             {
                 scrollTrigger:{
