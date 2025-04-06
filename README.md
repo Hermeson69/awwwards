@@ -1,54 +1,115 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## GUIA DE INSTALAÇÃO DO REACT COM O VITE
 
-Currently, two official plugins are available:
+Para a instalação do Vite, primeiro crie uma pasta na sua área de trabalho. Em seguida, abra o terminal e navegue até a pasta criada usando o comando `cd` seguido do caminho da pasta. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**OBS.:** Esse caminho pode ser obtido no explorador de arquivos.
 
-## Expanding the ESLint configuration
+### 1. Instale o Vite e o React
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Primeiro, acesse o site [Vite Guide](https://vite.dev/guide/).
+
+**OBS.:** Para o React funcionar, é necessário ter o Node.js instalado na sua máquina.
+
+#### 1.1. Instalação do Vite
+
+No terminal, execute o seguinte comando:
+
+```sh
+npm create vite@latest Nome-do-seu-projeto -- --template react
+```
+
+Esse processo pode demorar um pouco. Após a conclusão, digite no terminal:
+
+```sh
+code .
+```
+
+**OBS.:** Certifique-se de estar na mesma pasta do projeto.
+
+### 2. Finalização da Instalação no VSCode
+
+Como você já criou uma pasta e dentro dela está o seu projeto, abra o terminal no VSCode com `Ctrl + Shift + '` e execute os seguintes comandos:
+
+```sh
+cd 'nome_da_pasta_do_projeto'
+npm install
+npm run dev
+```
+
+### 2.1 Instalação do TailWind 4.0
+
+Devido a ultima atualização do Tailwind a 4.o ter mudado tudo, aqui está uma guia rapido de instalação dessa nova versão. Abra o terminal no VSCode com `Ctrl + Shift + '` e execute os comandos:
+```sh
+npm install tailwindcss @tailwindcss/vite
+```
+
+Após dar esse comando na sua /src crie um `index.css` para que nele coloque o:
+```css
+@import "tailwindcss";
+```
+
+nessa nova versão o arquivo tailwind.conf.js desaparece e temos que fazer no index o que poderia ser feito lá, usando-se das propriedades `@base`, `@theme` e etc já do proprio tailwind.
+
+OBS.: antes do passo acima modifique o aquivo raiz do vite incluindo o tailwind:
 
 ```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite' <-
+export default defineConfig({
+  plugins: [
+    tailwindcss(), <-
   ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
 })
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 3. Comandos Úteis
+Esse comando vai ver se todos os seus Package´s estão nas versões mais recentes:
+```sh
+npm outdated
+```
+Caso não estejam só rodar um:
+```sh
+npm update
+```
+Dessa forma, atualizando todos de uma vez.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 4. Styled-Components
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Estrutura do projeto:
+
+```
+Projeto
+├── node_modules
+├── public
+└── src
+    ├── assets
+    └── Global (Criação do seu arquivo global usando styled-components)
+        └── GlobalStyle.ts
+    ├── App.jsx
+    └── Main.jsx
+```
+
+Dentro da pasta `Global` haverá apenas um arquivo com os estilos globais da sua aplicação:
+
+```ts
+import { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+    }
+    :root {
+        /* --primary: #ffff;
+        --secundary: #15181c;
+        --gray: #7a7a7a;
+        --blue: #1da1f2;
+        --white: #fff;
+        --black: #0000; */
+    }
+`;
 ```
