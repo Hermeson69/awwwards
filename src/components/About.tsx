@@ -45,7 +45,7 @@ const About = () =>{
 
 
                 <div className="about-subtext">
-                    <p>The Game fo Game begins-your life now an eoic MMORPG</p>
+                    <p>The Game fo Game begins-your life now an epic MMORPG</p>
                     <p>Zentry unites every player from countless game and platforms</p>
                 </div>
             </div>
