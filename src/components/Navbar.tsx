@@ -8,9 +8,7 @@ const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
 
 const Navbar = () => {
   useEffect(() => {
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual'; 
-    }
+    history.scrollRestoration = 'manual';
     window.scrollTo(0, 0);
   }, []);
   const [isaudioplaying, setIsAudioPlaying] = useState(false);
