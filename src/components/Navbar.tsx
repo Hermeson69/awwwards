@@ -10,8 +10,7 @@ const Navbar = () => {
   const [isaudioplaying, setIsAudioPlaying] = useState(false);
   const [isaudioactivity, setIsAudioActivity] = useState(false);
   const navContainer = useRef(null);
-  const audioElementoRef = useRef(null);
-  // const audioElementoRef = useRef<HTMLAudioElement | null>(null);
+  const audioElementoRef = useRef<HTMLAudioElement | null>(null);
 
 const toggleAudioIndicator = () => {
   setIsAudioPlaying ((prev) => !prev);
