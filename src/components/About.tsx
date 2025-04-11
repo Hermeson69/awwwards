@@ -6,7 +6,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 const About = () =>{
     useGSAP(()=>{
-        window.scrollTo(0, 0);
         const clipAnimation = gsap.timeline(
             {
                 scrollTrigger:{
@@ -26,7 +25,7 @@ const About = () =>{
         })
     })
     return (
-        <div id = "about" className="min-h-screen w-screen">
+        <div id ="about" className="min-h-screen w-screen">
             <div className="relative mb-8 mt-36 flex flex-col">
                 <h2 className="font-general text-center text-sm uppercase md: text-[10px]">
                     Welcone to Zentry

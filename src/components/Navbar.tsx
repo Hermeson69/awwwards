@@ -7,6 +7,12 @@ import { TiLocationArrow } from "react-icons/ti";
 const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"]; 
 
 const Navbar = () => {
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual'; 
+    }
+    window.scrollTo(0, 0);
+  }, []);
   const [isaudioplaying, setIsAudioPlaying] = useState(false);
   const [isaudioactivity, setIsAudioActivity] = useState(false);
   const navContainer = useRef(null);
@@ -38,7 +44,7 @@ useEffect(() => {
         <nav className="flex w-full items-center justify-between p-4">
           {}
           <div className="flex items-center gap-7">
-            <img src={logo} alt="Logo" className="w-10 h-10" />
+            <img src={logo} alt="Logo" className="w-10 h-10 items-center bg-white rounded-4xl" />
             <Button
               id="product-button"
               title="Product"
@@ -50,7 +56,7 @@ useEffect(() => {
           <div className="flex h-full items-center">
             <div className="hidden md:block">
             {navItems.map((item) => (
-              <a key={item}href={`#${item.toLocaleLowerCase()}`} className="nav-hover-btn">
+              <a key={item} href={`#${item.toLocaleLowerCase()}`} className="nav-hover-btn">
                 {item}
               </a>
             ))}

@@ -85,7 +85,7 @@ const Hero = () => {
   });
 
   return (
-    <div className="relative h-screen w-screen overflow-x-hidden">
+    <div id="nexus" className="relative h-screen w-screen overflow-x-hidden">
       {isLoading && (
         <div className="flex-center absolut z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
           <div className="three-body">

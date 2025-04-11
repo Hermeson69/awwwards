@@ -1,5 +1,5 @@
-import About from "./components/About"
 import Hero from "./components/HeroSection"
+import About from "./components/About"
 import Navbar from "./components/Navbar"
 
 function App() {
