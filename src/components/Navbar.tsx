@@ -7,10 +7,6 @@ import { TiLocationArrow } from "react-icons/ti";
 const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"]; 
 
 const Navbar = () => {
-  useEffect(() => {
-    history.scrollRestoration = 'manual';
-    window.scrollTo(0, 0);
-  }, []);
   const [isaudioplaying, setIsAudioPlaying] = useState(false);
   const [isaudioactivity, setIsAudioActivity] = useState(false);
   const navContainer = useRef(null);

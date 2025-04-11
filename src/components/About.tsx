@@ -24,6 +24,13 @@ const About = () =>{
             borderRadius: 0
         })
     })
+
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+          ScrollTrigger.refresh();
+          window.scrollTo(0, 0);
+        }, 50);
+      });
     return (
         <div id ="about" className="min-h-screen w-screen">
             <div className="relative mb-8 mt-36 flex flex-col">
