@@ -62,7 +62,7 @@ export const Features = () => {
         </div>
 
         <div className="grid h-[135vh] gap-7 grid-rows-3 grid-cols-2">
-          <div className="bento-tilt_1 row-span-2 md:col-span-1">
+          <div className="bento-tilt_1 row-span-2 md:col-span-1 object-cover">
             <BentoCard
               src="videos/feature-2.mp4"
               title={
@@ -74,7 +74,7 @@ export const Features = () => {
             />
           </div>
           {}
-          <div className="bento-tilt_1 row-span-1 md:col-span-1">
+          <div className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
             <BentoCard
               src="videos/feature-3.mp4"
               title={
@@ -86,7 +86,7 @@ export const Features = () => {
             />
           </div>
 
-          <div className="bento-tilt_1 row-span-1 md:col-span-1">
+          <div className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
             <BentoCard
               src="videos/feature-4.mp4"
               title={
