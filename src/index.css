@@ -127,7 +127,7 @@ body {
   }
 
   .bento-tilt_1 { /* Large bento tile with hover effects */
-    @apply relative border-white/20 md:col-span-1 max-md:col-span-2 max-md:row-span-1 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+    @apply relative border-white/20 md:col-span-1 max-lg:col-span-2 max-lg:row-span-1 overflow-hidden rounded-md transition-transform duration-300 ease-out;
   }
 
   .bento-tilt_2 {
