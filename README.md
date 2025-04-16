@@ -84,32 +84,15 @@ Projeto
 ├── public
 └── src
     ├── assets
-    └── Global (Criação do seu arquivo global usando styled-components)
-        └── GlobalStyle.ts
+    ├── Index.css <- onde ficara o @tailwind import
     ├── App.jsx
     └── Main.jsx
 ```
 
-Dentro da pasta `Global` haverá apenas um arquivo com os estilos globais da sua aplicação:
+Dentro da pasta `Index.css` haverá apenas um arquivo com os estilos "globais" da sua aplicação:
 
 ```ts
-import { createGlobalStyle } from "styled-components";
-
-export const GlobalStyle = createGlobalStyle`
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-        font-weight: 300;
-    }
-    :root {
-        /* --primary: #ffff;
-        --secundary: #15181c;
-        --gray: #7a7a7a;
-        --blue: #1da1f2;
-        --white: #fff;
-        --black: #0000; */
-    }
-`;
+@import "tailwindcss";
+@thame
+@layer
 ```
