@@ -4,11 +4,13 @@ import { gsap } from "gsap";
 interface AnimateTitleProps {
     title: string;
     containerclass?: string;
+    id?: string;
 }
 
 const Animatetitle: React.FC<AnimateTitleProps> = ({
     title,
     containerclass,
+    id,
 }) => {
     const containerRef = useRef(null);
 
@@ -34,7 +36,11 @@ const Animatetitle: React.FC<AnimateTitleProps> = ({
 
     return (
         <>
-            <div ref={containerRef} className={`animated-title ${containerclass}`}>
+            <div
+                ref={containerRef}
+                id={id}
+                className={`animated-title ${containerclass}`}
+            >
                 {title.split("<br />").map((line, index) => (
                     <div
                         key={index}
