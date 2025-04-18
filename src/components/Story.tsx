@@ -1,6 +1,7 @@
 import { useRef } from "react"
 import Animatetitle from "./Animate-title"
 import gsap from "gsap";
+import { RoundedCorner } from "./RoundedCorner";
 
 export const Story = () =>{
     const frameRef = useRef<HTMLImageElement | null>(null);
@@ -68,6 +69,7 @@ export const Story = () =>{
                                /> 
                             </div>
                         </div>
+                        <RoundedCorner/>
                     </div>
 
                 </div>
