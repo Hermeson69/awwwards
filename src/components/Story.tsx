@@ -2,6 +2,7 @@ import { useRef } from "react"
 import Animatetitle from "./Animate-title"
 import gsap from "gsap";
 import { RoundedCorner } from "./RoundedCorner";
+import Button from "./Button";
 
 export const Story = () =>{
     const frameRef = useRef<HTMLImageElement | null>(null);
@@ -56,7 +57,7 @@ export const Story = () =>{
 
                     <div className="story-img-container">
                         <div className="story-img-mask">
-                            <div className="story-img-cotent">
+                            <div className="story-img-content">
                                <img
                                ref={frameRef}
                                onMouseLeave={handleMouseleave}
@@ -72,6 +73,26 @@ export const Story = () =>{
                         <RoundedCorner/>
                     </div>
 
+                </div>
+                <div className="-mt-80 flex w-full justify-center md:-mt-64
+                md:me-44 md:justify-end
+                ">
+                    <div className="flex h-full w-fit flex-col items-center
+                    md:items-start
+                    ">
+                        <p className="mt-3 max-w-sm text-center font-circular-web
+                        text-violet-50 md:text-start
+                        ">
+                            Where realms converge, lies Zentry and the boundless
+                            pillar. Discover its secrets and shape your fate amidst
+                            infinite opportunities.
+                        </p>
+                        <Button
+                         title="Discover Prologue"
+                         id="realm-button"
+                         containerClass="mt-5 bg-white"
+                        />
+                    </div>
                 </div>
             </div>
         </section>
