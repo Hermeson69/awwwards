@@ -126,7 +126,7 @@ body {
     will-change: opacity, transform;
   }
 
-  .bento-tilt_1 { /* Large bento tile with hover effects */
+  .bento-tilt_1 {
     @apply relative border-white/20 md:col-span-1 max-lg:col-span-2 max-lg:row-span-1 overflow-hidden rounded-md transition-transform duration-300 ease-out;
   }
 
@@ -307,5 +307,19 @@ body {
   50% {
     transform: translateY(66%) scale(0.65);
     opacity: 0.8;
+  }
+}
+
+@media (min-width: 773px) and (max-width: 860px) {
+  .bento-tilt_1:nth-child(1) {
+    @apply col-span-2 row-span-2;
+  }
+  
+  .bento-tilt_1:nth-child(2) {
+    @apply col-span-1 row-span-2;
+  }
+  
+  .bento-tilt_1:nth-child(3) {
+    @apply col-span-1 row-span-2;
   }
 }
