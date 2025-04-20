@@ -2,7 +2,7 @@ export const RoundedCorner = () => {
   return (
     <svg className="invisible absolute -z-0" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <filter id="flt_tag">
+        <filter id="rounded_corner_filter">
           <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
           <feColorMatrix
             in="blur"
@@ -11,9 +11,9 @@ export const RoundedCorner = () => {
                     0 1 0 0 0
                     0 0 1 0 0
                     0 0 0 19 -9"
-            result="flt_tag"
+            result="matrix"
           />
-          <feComposite in="SourceGraphic" in2="flt_tag" operator="atop" />
+          <feComposite in="SourceGraphic" in2="matrix" operator="atop" />
         </filter>
       </defs>
     </svg>

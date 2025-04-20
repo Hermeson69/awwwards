@@ -140,7 +140,7 @@ body {
 
   .story-img-container {
     @apply relative md:h-dvh h-[90vh] w-full;
-    filter: url("#flt_tag");
+    filter: url("#rounded_corner_filter");
   }
 
   .story-img-mask {
@@ -153,12 +153,6 @@ body {
     transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0) scale(1);
   }
 
-  .story-img-content img {
-    filter: url(./#flt_tag);
-    width: 100%;
-    height: auto;
-    display: block;
-  }
 
   .gallery-img-container {
     @apply size-64 overflow-hidden bg-violet-300;
