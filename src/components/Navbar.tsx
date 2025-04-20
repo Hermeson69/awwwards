@@ -98,7 +98,7 @@ const Navbar = () => {
             >
               <audio
                 ref={audioElementoRef}
-                src="/audio/loop.mp3"
+                src="audio/loop.mp3"
                 loop
                 className="hidden"
               />

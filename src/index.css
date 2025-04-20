@@ -153,6 +153,13 @@ body {
     transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0) scale(1);
   }
 
+  .story-img-content img {
+    filter: url(./#flt_tag);
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   .gallery-img-container {
     @apply size-64 overflow-hidden bg-violet-300;
   }

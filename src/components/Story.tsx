@@ -52,7 +52,7 @@ export const Story = () =>{
                     title="The st<b>o</b>ry of <br />a hidden real<b>m</b>"
                     containerclass="mt-5 pointer-events-none mix-blend-difference
                     relative z-10"
-                    id="#story"
+                    id="story"
                     />
 
                     <div className="story-img-container">
@@ -64,7 +64,7 @@ export const Story = () =>{
                                onMouseUp={handleMouseleave}
                                onMouseEnter={handleMouseleave}
                                onMouseMove={handleMouseMove}
-                               src="/img/entrance.webp"
+                               src="img/entrance.webp"
                                alt="entrance"
                                className="object-contain"
                                /> 
