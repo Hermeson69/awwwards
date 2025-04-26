@@ -6,8 +6,6 @@ Bem-vindo ao **Awwwards Zentry**, uma plataforma web onde criativos podem compar
 - [Sobre o Projeto](#sobre-o-projeto)
 - [Funcionalidades](#funcionalidades)
 - [Como Configurar](#como-configurar)
-- [Uso](#uso)
-- [Contribuição](#contribuição)
 - [Licença](#licença)
 
 ## Sobre o Projeto
