@@ -1,98 +1,57 @@
+# Awwwards Zentry
 
-## GUIA DE INSTALAÇÃO DO REACT COM O VITE
+Bem-vindo ao **Awwwards Zentry**, uma plataforma web onde criativos podem compartilhar seus projetos, receber avaliações e se inspirar em outros trabalhos. Nosso objetivo é criar uma comunidade vibrante de designers, desenvolvedores e artistas, promovendo feedback construtivo e celebrando a excelência criativa.
 
-Para a instalação do Vite, primeiro crie uma pasta na sua área de trabalho. Em seguida, abra o terminal e navegue até a pasta criada usando o comando `cd` seguido do caminho da pasta. 
+## Índice
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Funcionalidades](#funcionalidades)
+- [Como Configurar](#como-configurar)
+- [Uso](#uso)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
 
-**OBS.:** Esse caminho pode ser obtido no explorador de arquivos.
+## Sobre o Projeto
 
-### 1. Instale o Vite e o React
+O **Awwwards Zentry** é uma aplicação web desenvolvida com **React**, **Vite**, **Tailwind CSS v4** e **GSAP** para animações fluidas e interativas. Inspirada em plataformas como o Awwwards, a aplicação oferece um espaço para criativos exibirem seus projetos e receberem avaliações, com foco em usabilidade, design moderno e acessibilidade.
 
-Primeiro, acesse o site [Vite Guide](https://vite.dev/guide/).
+## Funcionalidades
 
-**OBS.:** Para o React funcionar, é necessário ter o Node.js instalado na sua máquina.
+- **Upload de Projetos**: Interface simples para compartilhar projetos com suporte a imagens, vídeos e links.
+- **Sistema de Avaliação**: Usuários podem avaliar projetos com notas (1 a 5) e comentários detalhados.
+- **Animações Interativas**: Efeitos visuais suaves criados com GSAP para uma experiência envolvente.
+- **Design Responsivo**: Estilização moderna e adaptável com Tailwind CSS v4.
+- **Pesquisa e Filtros**: Busca por projetos com filtros por categoria, popularidade ou data de publicação.
 
-#### 1.1. Instalação do Vite
+## Como Configurar
 
-No terminal, execute o seguinte comando:
+Para saber como configurar o projeto localmente, consulte o guia detalhado em [Instalação](docs/install.md).
 
-```sh
-npm create vite@latest Nome-do-seu-projeto -- --template react
+Exemplo de um componente com Tailwind CSS e GSAP:
+
+```jsx
+import { useEffect } from 'react'
+import { gsap } from 'gsap'
+
+function ProjectCard() {
+  useEffect(() => {
+    gsap.fromTo(
+      '.project-card',
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }
+    )
+  }, [])
+
+  return (
+    <div className="project-card p-4 bg-white rounded-lg shadow-lg">
+      <h2 className="text-xl font-bold text-gray-800">Meu Projeto</h2>
+      <p className="text-gray-600">Descrição do projeto criativo.</p>
+    </div>
+  )
+}
+
+export default ProjectCard
 ```
 
-Esse processo pode demorar um pouco. Após a conclusão, digite no terminal:
+## Licença
 
-```sh
-code .
-```
-
-**OBS.:** Certifique-se de estar na mesma pasta do projeto.
-
-### 2. Finalização da Instalação no VSCode
-
-Como você já criou uma pasta e dentro dela está o seu projeto, abra o terminal no VSCode com `Ctrl + Shift + '` e execute os seguintes comandos:
-
-```sh
-cd 'nome_da_pasta_do_projeto'
-npm install
-npm run dev
-```
-
-### 2.1 Instalação do TailWind 4.0
-
-Devido a ultima atualização do Tailwind a 4.o ter mudado tudo, aqui está uma guia rapido de instalação dessa nova versão. Abra o terminal no VSCode com `Ctrl + Shift + '` e execute os comandos:
-```sh
-npm install tailwindcss @tailwindcss/vite
-```
-
-Após dar esse comando na sua /src crie um `index.css` para que nele coloque o:
-```css
-@import "tailwindcss";
-```
-
-nessa nova versão o arquivo tailwind.conf.js desaparece e temos que fazer no index o que poderia ser feito lá, usando-se das propriedades `@base`, `@theme` e etc já do proprio tailwind.
-
-OBS.: antes do passo acima modifique o aquivo raiz do vite incluindo o tailwind:
-
-```js
-import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite' <-
-export default defineConfig({
-  plugins: [
-    tailwindcss(), <-
-  ],
-})
-```
-
-### 3. Comandos Úteis
-Esse comando vai ver se todos os seus Package´s estão nas versões mais recentes:
-```sh
-npm outdated
-```
-Caso não estejam só rodar um:
-```sh
-npm update
-```
-Dessa forma, atualizando todos de uma vez.
-
-### 4. Styled-Components
-
-Estrutura do projeto:
-
-```
-Projeto
-├── node_modules
-├── public
-└── src
-    ├── assets
-    ├── Index.css <- onde ficara o @tailwind import
-    ├── App.jsx
-    └── Main.jsx
-```
-
-Dentro da pasta `Index.css` haverá apenas um arquivo com os estilos "globais" da sua aplicação:
-
-```ts
-@import "tailwindcss";
-@thame
-@layer
-```
+Este projeto está licenciado sob a [MIT License](LICENSE).
